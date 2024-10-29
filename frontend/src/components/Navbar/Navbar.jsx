@@ -18,10 +18,18 @@ const Navbar = ({ setShowLogin }) => {
                 onClick={() => navigate("/")}
             />
             <ul className='navbar-menu'>
-                <li onClick={() => setMenu("Home")} className={menu === "Home" ? "active" : ""}>Home</li>
-                <li onClick={() => setMenu("Menu")} className={menu === "Menu" ? "active" : ""}>Menu</li>
-                <li onClick={() => setMenu("Mobile-App")} className={menu === "Mobile-App" ? "active" : ""}>Mobile-App</li>
-                <li onClick={() => setMenu("Contact-Us")} className={menu === "Contact-Us" ? "active" : ""}>Contact Us</li>
+                <li onClick={() => setMenu("Home")} className={menu === "Home" ? "active" : ""}>
+                    <a href='#'>Home</a>
+                </li>
+                <li onClick={() => setMenu("Menu")} className={menu === "Menu" ? "active" : ""}>
+                    <a href='#explore-menu'>Menu</a>
+                </li>
+                <li onClick={() => setMenu("Mobile-App")} className={menu === "Mobile-App" ? "active" : ""}>
+                    <a href='#app-download'>Mobile-App</a>
+                </li>
+                <li onClick={() => setMenu("Contact-Us")} className={menu === "Contact-Us" ? "active" : ""}>
+                    <a href='#footer'>Contact Us</a>
+                </li>
             </ul>
             <div className='navbar-right'>
                 <img src={assets.search_icon} alt='search icon' />
