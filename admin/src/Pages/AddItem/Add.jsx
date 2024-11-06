@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import './AddItem.css'
+import React, { useState } from 'react'
+import "./Add.css"
 import { assets } from '../../assets/assets'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
-const AddItem = () => {
+const AddItem = ({ url }) => {
 
     const [image, setImage] = useState(false)
     const [data, setData] = useState({
@@ -12,19 +14,48 @@ const AddItem = () => {
         category: 'Salad'
     })
 
+    // Mengecek Perubahan
     const handleOnChange = (e) => {
         const name = e.target.name
         const value = e.target.value
         setData(data => ({ ...data, [name]: value }))
     }
 
-    useEffect(() => {
+    // API CALL
+    const handleOnSubmit = async (e) => {
+        e.preventDefault()
 
-    }, [data])
+        const formData = new FormData()
+        formData.append('name', data.name)
+        formData.append('description', data.description)
+        formData.append('price', Number(data.price))
+        formData.append('category', data.category)
+        formData.append('image', image)
+
+        try {
+            const response = await axios.post(`${url}/api/food/add`, formData)
+            if (response.data.success) {
+                setData({
+                    name: '',
+                    description: '',
+                    price: '',
+                    category: 'Salad'
+                })
+                setImage(false)
+                toast.success(response.data.message)
+            } else {
+                toast.error(response.data.message)
+            }
+        } catch (error) {
+            toast.error("An error occurred while adding the item.")
+            console.error("Error:", error.response || error.message || error)
+        }
+    }
+
 
     return (
         <div className='add'>
-            <form className='flex-col'>
+            <form className='flex-col' onSubmit={handleOnSubmit}>
                 <div className='add-img-upload flex-col'>
                     <p>Upload Image</p>
                     <label htmlFor='image'>

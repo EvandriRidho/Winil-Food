@@ -2,12 +2,11 @@ import foodModel from "../models/foodModel.js"
 import fs from "fs";
 
 // add food item
-
 const addFood = async (req, res) => {
     let image_filename = `${req.file.filename}`
     const food = new foodModel({
         name: req.body.name,
-        desription: req.body.desription,
+        description: req.body.description,
         price: req.body.price,
         category: req.body.category,
         image: image_filename
@@ -35,16 +34,21 @@ const listFood = async (req, res) => {
 // remove food items
 const removeFood = async (req, res) => {
     try {
-        const food = await foodModel.findById(req.body.id)
-        fs.unlink(`uploads/${food.image}`, () => { })
+        const food = await foodModel.findById(req.body.id);
 
-        await foodModel.findByIdAndDelete(req.body.id)
-        res.json({ success: true, message: "Food Item Deleted" })
-        console.log(error)
+        if (!food) {
+            return res.status(404).json({ success: false, message: "Food item not found" });
+        }
+
+        // Menghapus file gambar secara sinkron atau menggunakan fs.promises untuk proses async
+        await fs.promises.unlink(`uploads/${food.image}`);
+
+        await foodModel.findByIdAndDelete(req.body.id);
+        return res.json({ success: true, message: "Food Item Deleted" });
     } catch (error) {
-        console.log(error)
-        res.json({ success: false, message: "Error" })
+        console.error(error);
+        return res.status(500).json({ success: false, message: "Error" });
     }
-}
+};
 
 export { addFood, listFood, removeFood }

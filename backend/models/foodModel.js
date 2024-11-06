@@ -5,7 +5,7 @@ const foodSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter food name"],
     },
-    desription: {
+    description: {
         type: String,
         required: [true, "Please enter food description"],
     },
