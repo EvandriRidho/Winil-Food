@@ -2,8 +2,7 @@ import orderModel from '../models/orderModel.js'
 import userModel from '../models/userModel.js'
 import Stripe from 'stripe'
 
-// Stripe Masih Hardcode
-const stripe = new Stripe("sk_test_51QPGBlFp6JBMyoFLc11GTNiW08ApTY3WtIVXFbSG6Jy1UhvlYgjAlsu6lbpWcC3wQbyP0pb3u8VJqQeKImB7i1O000YzmIhlNa")
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 // Placing user order for clienty
 
