@@ -1,6 +1,6 @@
 .sidebar {
     width: 250px;
-    min-height: 100vh;
+    min-height: 100%;
     border: 1.5px solid #a9a9a9;
     border-top: 0;
     font-size: max(1vw, 10px);
@@ -30,7 +30,6 @@
 }
 
 .sidebar-option:hover {
-    background-color: #a9a9a9;
     border-color: tomato;
 }
 
