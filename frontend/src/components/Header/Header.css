@@ -1,9 +1,14 @@
 .header {
   height: 34vw;
   margin: 30px auto;
-  background: url("/header_img.png") no-repeat;
-  background-size: contain;
+  background: url("/header-pic.jpeg") no-repeat;
+  background-size: cover;
   position: relative;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
 }
 
 .header-contents {
@@ -32,10 +37,10 @@
 
 .header-contents button {
   border: none;
-  color: #747474;
+  color: white;
   font-weight: 500;
   padding: 1vw 2.3vw;
-  background-color: white;
+  background-color: #6B8E23;
   font-size: max(1vw, 13px);
   border-radius: 50px;
   -webkit-border-radius: 50px;
@@ -45,12 +50,18 @@
 }
 
 @media (max-width: 1050px) {
+  .header {
+    height: 60vw;
+  }
   .header-contents {
     max-width: 45%;
   }
 }
 
 @media (max-width: 750px) {
+  .header {
+    height: 50vw;
+  }
   .header-contents {
     max-width: 65%;
   }

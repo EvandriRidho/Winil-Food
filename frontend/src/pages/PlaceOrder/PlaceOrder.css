@@ -25,7 +25,7 @@
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-    outline-color: tomato;
+    outline-color: black;
 }
 
 .place-order-left .multi-fields {
@@ -40,4 +40,37 @@
 
 .place-order .cart-total button {
     margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+    .place-order {
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+    .place-order-left,
+    .place-order-right {
+        max-width: 100%; 
+    }
+
+    .place-order-left .title {
+        font-size: 24px; 
+        margin-bottom: 20px; 
+    }
+
+    .place-order-left input {
+        padding: 8px; 
+        font-size: 12px; 
+    }
+
+    .place-order-left .multi-fields {
+        flex-direction: column; 
+        gap: 10px; 
+    }
+
+    .place-order .cart-total button {
+        width: 100%; 
+        font-size: 14px; 
+        padding: 8px; 
+    }
 }

@@ -3,6 +3,7 @@ import './Navbar.css'
 import { assets } from '../../assets/frontend_assets/assets'
 import { useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
+
 const Navbar = ({ setShowLogin }) => {
 
     const navigate = useNavigate()
@@ -17,12 +18,13 @@ const Navbar = ({ setShowLogin }) => {
 
     return (
         <nav className='navbar'>
-            <img
+            <h1 
                 className='navbar-logo'
-                src={assets.logo}
                 alt='logo'
                 onClick={() => navigate("/")}
-            />
+            >
+                Winil Food
+            </h1>
             <ul className='navbar-menu'>
                 <li onClick={() => setMenu("Home")} className={menu === "Home" ? "active" : ""}>
                     <a href='#'>Home</a>
@@ -30,15 +32,14 @@ const Navbar = ({ setShowLogin }) => {
                 <li onClick={() => setMenu("Menu")} className={menu === "Menu" ? "active" : ""}>
                     <a href='#explore-menu'>Menu</a>
                 </li>
-                <li onClick={() => setMenu("Mobile-App")} className={menu === "Mobile-App" ? "active" : ""}>
-                    <a href='#app-download'>Mobile-App</a>
+                <li onClick={() => setMenu("About-Us")} className={menu === "About-Us" ? "active" : ""}>
+                    <a href='#app-download'>About Us</a>
                 </li>
                 <li onClick={() => setMenu("Contact-Us")} className={menu === "Contact-Us" ? "active" : ""}>
                     <a href='#footer'>Contact Us</a>
                 </li>
             </ul>
             <div className='navbar-right'>
-                <img src={assets.search_icon} alt='search icon' />
                 <div className='navbar-search-icon'>
                     <img
                         src={assets.basket_icon} alt='basket icon'
@@ -50,9 +51,9 @@ const Navbar = ({ setShowLogin }) => {
                     <div className='navbar-profile'>
                         <img src={assets.profile_icon} alt='profile' />
                         <ul className='navbar-profile-dropdown'>
-                            <li onClick={() => navigate("/myorders")}><img src={assets.bag_icon} alt='bag icon' /><p>Orders</p></li>
+                            <li onClick={() => navigate("/myorders")}><p>Orders</p></li>
                             <hr />
-                            <li onClick={handleLogout}><img src={assets.logout_icon} alt='logout-icon' /><p>Logout</p></li>
+                            <li onClick={handleLogout}><p>Logout</p></li>
                         </ul>
                     </div>
                 )}

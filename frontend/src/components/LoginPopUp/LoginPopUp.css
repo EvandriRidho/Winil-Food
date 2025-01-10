@@ -30,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: black;
+  color: #6B8E23;
 }
 
 .login-popup-title img {
@@ -63,7 +63,7 @@
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   color: white;
-  background-color: tomato;
+  background-color: #6B8E23;
   font-size: 15px;
   cursor: pointer;
 }
@@ -80,7 +80,7 @@
 }
 
 .login-popup p span {
-  color: tomato;
+  color: #6B8E23;
   font-weight: 500;
   cursor: pointer;
 }

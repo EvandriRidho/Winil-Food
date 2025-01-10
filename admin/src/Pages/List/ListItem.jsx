@@ -32,7 +32,7 @@ const ListItem = ({ url }) => {
     }, [])
     return (
         <div className='list add flex-col'>
-            <p>All Foods List</p>
+            <p className='title'>All Foods List</p>
             <div className='list-table'>
                 <div className='list-table-format title'>
                     <b>Image</b>

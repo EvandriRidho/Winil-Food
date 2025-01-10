@@ -30,12 +30,13 @@
 }
 
 .sidebar-option:hover {
-    border-color: tomato;
+    border-color: #6B8E23;
+    background-color: #F5F5DC;
 }
 
-.sidebar-option .active {
-    background-color: #a9a9a9;
-    border-color: tomato;
+.sidebar-option.active {
+    background-color: #F5F5DC;
+    border-color: #6B8E23;
 }
 
 @media (max-width: 900px) {

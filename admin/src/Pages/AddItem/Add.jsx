@@ -82,7 +82,7 @@ const AddItem = ({ url }) => {
                 </div>
                 <div className='add-category-price'>
                     <div className='add-category flex-col'>
-                        <p>Product Category</p>
+                        <p>Category</p>
                         <select onChange={handleOnChange} value={data.category} name='category' required>
                             <option value='Salad'>Salad</option>
                             <option value='Rolls'>Rolls</option>
