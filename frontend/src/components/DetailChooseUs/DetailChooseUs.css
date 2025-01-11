@@ -1,0 +1,79 @@
+.detail-choose-us {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-choose-us:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.detail-choose-us-icons {
+  flex: 0 0 50px;
+  margin-right: 20px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #6B8E23;
+}
+
+.detail-choose-us-text {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .detail-choose-us {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items on small screens */
+    text-align: center; /* Center the text */
+  }
+
+  .detail-choose-us-icons {
+    margin-right: 0;
+    margin-bottom: 15px; /* Adds space between the icon and text */
+  }
+
+  .icon {
+    font-size: 3rem; /* Increase icon size for better visibility on smaller screens */
+  }
+
+  .card-title {
+    font-size: 1.25rem; /* Decrease font size for better readability */
+  }
+
+  .card-description {
+    font-size: 0.9rem; /* Adjust description font size */
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 1rem; /* Further reduce font size for very small screens */
+  }
+
+  .card-description {
+    font-size: 0.85rem; /* Further reduce font size */
+  }
+}

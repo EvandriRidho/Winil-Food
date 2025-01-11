@@ -1,0 +1,94 @@
+.about-us {
+  padding: 40px 20px;
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+}
+
+.about-us h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 33.33%; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card .icon {
+  font-size: 3rem;
+  color: #6B8E23;
+  margin-bottom: 15px;
+}
+
+.card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card .card-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .about-us .title {
+    font-size: 2rem;
+  }
+
+  .cards-container {
+    gap: 20px;
+  }
+
+  .card {
+    width: 50%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us .title {
+    font-size: 1.8rem;
+  }
+
+  .cards-container {
+    gap: 10px;
+  }
+
+  .card {
+    width: 100%; 
+    padding: 15px;
+  }
+
+  .card .icon {
+    font-size: 2.5rem;
+  }
+
+  .card .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card .card-description {
+    font-size: 0.9rem;
+  }
+}

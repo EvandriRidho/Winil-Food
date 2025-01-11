@@ -1,0 +1,57 @@
+.choose-us {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap; /* This ensures that the content can wrap when the screen is small */
+}
+
+.choose-us-image {
+  width: 43%;
+}
+
+.choose-us-image img {
+  width: 100%;
+  height: 600px;
+  border-radius: 16px;
+}
+
+.choose-us-text {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.choose-us-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .choose-us {
+    flex-direction: column;
+    align-items: center; /* Centers the content on smaller screens */
+  }
+
+  .choose-us-image {
+    display: none;
+  }
+
+  .choose-us-text {
+    width: 100%;
+    padding-left: 0; /* Remove padding on small screens */
+    text-align: center; /* Centers the text */
+  }
+
+  .choose-us-text h2 {
+    font-size: 1.5rem; /* Adjust the font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .choose-us-text h2 {
+    font-size: 1.2rem; /* Further reduce font size for very small screens */
+  }
+}
